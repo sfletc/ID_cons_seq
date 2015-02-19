@@ -1,3 +1,5 @@
+Copyright Stephen Fletcher
+
 """
 Fasta file format import module.
 Reads file --> returns dictionary {header:sequence}

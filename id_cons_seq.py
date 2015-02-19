@@ -1,3 +1,5 @@
+Copyright Stephen Fletcher
+
 import get_ref
 """
 Set conserved region sequence length (ie. 21nt)
@@ -42,39 +44,6 @@ def get_sub_seqs(ref_file, window):
 			cons_seq.append((sub_seq,occurences))
 	return cons_seq
 
-# def get_most_sub_seqs(ref_file, window, portion):
-# 	seq_lib = {}
-# 	cons_seq = []
-
-# 	pos = 0
-
-
-
-# 	ref_seq = get_ref.get_ref_f_strand(ref_file)
-
-# 	for header,seq in ref_seq.iteritems():
-# 		pos = 0
-# 		while pos < (len(seq)-window):  #fix this so stops in correct place
-# 			sub_seq = seq[pos:pos+window]
-
-# 			if sub_seq not in seq_lib:
-
-# 				seq_lib[sub_seq]={header:[pos]}
-# 			elif header in seq_lib[sub_seq]:
-# 				seq_lib[sub_seq][header].append(pos)
-# 			elif sub_seq in seq_lib and header not in seq_lib[sub_seq]:
-# 				seq_lib[sub_seq][header] = [pos]
-# 			elif complement(sub_seq) in seq_lib and header not in seq_lib[sub_seq]:
-# 				seq_lib[sub_seq][header] = [pos]
-# 			else:
-# 				pass
-# 			pos +=1
-
-# 	for sub_seq, occurences in seq_lib.iteritems():
-
-# 		if float(len(occurences)) / len(ref_seq) > portion:
-# 			cons_seq.append((sub_seq,occurences))
-# 	return cons_seq
 
 def get_most_sub_seqs(ref_file, window=21):
 	seq_lib = {}
@@ -134,20 +103,7 @@ def longest_com_seq(ref_seq, window = 21):
 		else:
 			
 			break
-	# most_max_len = 1
-	# i=1
-	# stop_iterating = 25
-	
-	# for i in range(stop_iterating):
-	# 	cons_seqs = get_most_sub_seqs(ref_seq,i, portion)
 
-	# 	if len(cons_seqs) != 0:
-	# 		most_max_len = i
-	# 		i+=1
-	# 		most_cons_seqs = cons_seqs
-	# 	else:
-			
-	# 		break
 	refs_covered=[]
 	best_cons_seqs = get_most_sub_seqs(ref_seq,window)
 	print '\nMax conserved seq. len. = {0} nt'.format(max_len)
@@ -160,9 +116,6 @@ def longest_com_seq(ref_seq, window = 21):
 
 				refs_covered.append(key)
 	print '\nCovering {0} reference sequences'.format(len(refs_covered))
-	# print 'Seq. len. = {0} nt conserved in {1} percent of sequences'\
-	# .format(most_max_len,(portion * 100))
-
 
 
 def complement(sequence):
