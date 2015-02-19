@@ -1,4 +1,4 @@
-Copyright Stephen Fletcher
+#Copyright Stephen Fletcher
 
 """
 Fasta file format import module.
