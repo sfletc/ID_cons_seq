@@ -9,6 +9,7 @@ No command line parser - run in iPython
 
 longest_com_seq(input_seq_fasta_file_name, target_length)
 
+
 Example output:
 
 longest_com_seq('input.fa', 23)
@@ -19,8 +20,12 @@ Max conserved seq. len. = 14 nt
 
 Seq = ATGCGCTATGCATGCGCTCATCG
 
+
 Reference = >1 at position [4665]
+
 Reference = >2 at position [9761]
-Reference = >3 at position [9210]
+
 Reference = >4 at position [9995]
+
 Reference = >5 at position [3441]
+
